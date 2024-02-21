@@ -1,0 +1,32 @@
+﻿@page
+@using ToDoShared
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<a asp-page="ToDoAdd" class="btn btn-primary"> Dodaj nowe zadanie</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nazwa zadania</th>
+            <th>Data</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(ToDoItem td in Model.toDoItems)
+        {
+            <tr>
+                <td>@td.TodoTask</td>
+                <td>@td.TodoTime</td>
+                <td><a asp-page="./Delete" asp-route-id="@td.Id" class="btn btn-danger">Delete</a> </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

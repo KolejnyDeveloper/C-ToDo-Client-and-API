@@ -1,0 +1,12 @@
+﻿@page
+@model ToDoUI.Pages.ToDoAddModel
+@{
+    ViewData["Title"] = "Add new ToDo";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="POST">
+    <input asp-for="todoitem.TodoTask"/> 
+    <br />
+    <button type="submit">Dodaj nowe zadanie</button>
+</form>
